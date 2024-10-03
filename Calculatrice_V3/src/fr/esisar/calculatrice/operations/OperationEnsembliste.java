@@ -2,9 +2,9 @@ package fr.esisar.calculatrice.operations;
 
 import fr.esisar.calculatrice.CalculatriceException;
 
-public abstract class OperationUnitaire implements Operation {
+public abstract class OperationEnsembliste implements Operation {
 
-	protected abstract Double doCalculer(Double operande);
+	protected abstract Double docalculer(Double operandes[]);
 	
 	@Override
 	public String getNom() {
@@ -14,10 +14,11 @@ public abstract class OperationUnitaire implements Operation {
 
 	@Override
 	public Double calculer(Double... operandes) throws CalculatriceException {
-		if(operandes.length != 1) {
-			throw new CalculatriceException(" Cette operation besoin ne que 1 operande");
+		if(operandes[0] == null) {
+			throw new CalculatriceException("Ensemble vide");
 		}
-	return this.doCalculer(operandes[0]);
+		
+		return this.docalculer(operandes);
 	}
 
 }

@@ -5,7 +5,7 @@ import fr.esisar.calculatrice.operations.OperationUnitaire;
 public class Cosinus extends OperationUnitaire {
 
 	@Override
-	protected Double docalculer(Double operande) {
+	protected Double doCalculer(Double operande) {
 		// TODO Auto-generated method stub
 		return Math.cos(operande);
 	}

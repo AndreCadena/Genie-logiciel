@@ -14,8 +14,10 @@ public abstract class OperationBinaire implements Operation {
 
 	@Override
 	public Double calculer(Double... operandes) throws CalculatriceException {
-		// TODO Auto-generated method stub
-		return null;
+			if(operandes.length != 2) {
+				throw new CalculatriceException(" Cette operation besoin ne que 2 operandes");
+			}
+		return this.doCalculer(operandes[0],operandes[1]);
 	}
 	
 
